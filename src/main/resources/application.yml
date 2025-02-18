@@ -1,0 +1,28 @@
+spring:
+  batch:
+    jdbc:
+      initialize-schema: always
+    job:
+      enabled: false
+  datasource:
+    driver-class-name: org.postgresql.Driver
+    url:               jdbc:postgresql://localhost:5432/mydb
+    username:          postgres
+    password:          postgres
+  jpa:
+    show-sql:          true
+    generate-ddl:      false
+    hibernate:
+      use-new-id-generator-mappings: true
+      naming:
+        implicit-strategy: org.hibernate.boot.model.naming.ImplicitNamingStrategyJpaCompliantImpl
+    properties:
+      hibernate:
+        format_sql:    true
+        jdbc:
+          batch_size:  10
+        order_inserts: true
+        order_updates: true
+first:
+  chunck:
+    size: 10
