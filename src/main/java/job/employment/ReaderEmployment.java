@@ -7,22 +7,22 @@ import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.io.ClassPathResource;
 
-import model.Employment;
+import dto.EmploymentDTO;
 
 @Configuration
 @EnableBatchProcessing
 public class ReaderEmployment {
     
     @Bean
-    public FlatFileItemReader<Employment> reader() {
-        return new FlatFileItemReaderBuilder<Employment>()
+    public FlatFileItemReader<EmploymentDTO> reader() {
+        return new FlatFileItemReaderBuilder<EmploymentDTO>()
                 .name("employmentReader")
                 .resource(new ClassPathResource("data.csv"))
                 .delimited()
                 .delimiter(";")
                 .names("sex", "typeOfJob", "ageGroups", "period", "total")
                 .linesToSkip(1)
-                .targetType(Employment.class)
+                .targetType(EmploymentDTO.class)
                 .build();
     }
 }

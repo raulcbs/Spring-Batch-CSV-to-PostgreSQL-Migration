@@ -1,11 +1,11 @@
-package model;
+package dto;
 
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
-public class Employment {
+public class EmploymentDTO {
     private String sex;
     private String typeOfJob;
     private String ageGroups;
