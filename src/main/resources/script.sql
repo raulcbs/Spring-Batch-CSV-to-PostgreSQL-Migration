@@ -21,7 +21,7 @@ CREATE TABLE age_group (
 CREATE TABLE period (
     period_id SERIAL PRIMARY KEY,
     year INTEGER NOT NULL,
-    quarter VARCHAR(3) NOT NULL,
+    quarter VARCHAR(4) NOT NULL,
     UNIQUE (year, quarter)
 );
 
