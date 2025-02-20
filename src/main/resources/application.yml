@@ -19,9 +19,6 @@ spring:
       hibernate:
         format_sql:    true
         jdbc:
-          batch_size:  10
+          batch_size:  5000
         order_inserts: true
         order_updates: true
-first:
-  chunck:
-    size: 10
